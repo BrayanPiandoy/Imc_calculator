@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingHorizontal="16dp"
+    android:paddingVertical="32dp"
+    android:background="@color/background"
+    tools:context=".FirtsActivity">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cdFemenino"
+        android:layout_width="0dp"
+        android:layout_height="150dp"
+        android:layout_marginEnd="10dp"
+        app:cardBackgroundColor="@color/backgroun_component"
+        app:cardCornerRadius="20dp"
+        app:layout_constraintEnd_toStartOf="@id/cdMasculino"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center">
+
+
+            <ImageView
+                android:layout_marginBottom="0dp"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/ic_female"
+                app:tint="@color/white" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/female"
+                android:textColor="@color/white" />
+
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </androidx.cardview.widget.CardView>
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cdMasculino"
+        android:layout_width="0dp"
+        android:layout_height="150dp"
+        android:layout_marginStart="10dp"
+        app:cardBackgroundColor="@color/backgroun_component"
+        app:cardCornerRadius="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/cdFemenino"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical">
+
+
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginBottom="0dp"
+                android:src="@drawable/ic_male"
+                app:tint="@color/white" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/male"
+                android:textColor="@color/white" />
+
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/viewHeight"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="32dp"
+        app:cardBackgroundColor="@color/backgroun_component"
+        app:cardCornerRadius="16dp"
+        app:layout_constraintTop_toBottomOf="@id/cdFemenino">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:gravity="center"
+            android:layout_margin="16dp"
+            android:orientation="vertical"
+            android:layout_height="match_parent">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/height"
+                android:textColor="@color/white"/>
+
+            <TextView
+                android:id="@+id/heigt"
+                android:textColor="@color/white"
+                android:layout_width="wrap_content"
+                android:text="120 cm"
+                android:textSize="30sp"
+                android:layout_height="wrap_content"/>
+
+            <com.google.android.material.slider.RangeSlider
+                android:id="@+id/rsHeigth"
+                android:layout_width="match_parent"
+                android:stepSize="1"
+                android:valueFrom="120"
+                android:valueTo="200"
+                android:layout_height="wrap_content">
+
+            </com.google.android.material.slider.RangeSlider>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/viewWidth"
+        android:layout_width="0dp"
+        app:layout_constraintTop_toBottomOf="@id/viewHeight"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/viewAge"
+        app:cardBackgroundColor="@color/backgroun_component"
+        app:cardCornerRadius="20dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="16dp"
+        android:layout_height="150dp">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/weight"
+                android:textColor="@color/white"/>
+
+            <TextView
+                android:id="@+id/twWeight"
+                android:textColor="@color/white"
+                android:layout_width="wrap_content"
+                tools:text="60"
+                android:textSize="30sp"
+                android:layout_height="wrap_content"/>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/btnRW"
+                    android:layout_width="wrap_content"
+                    android:layout_marginEnd="16dp"
+                    app:backgroundTint="@color/backgroun_component_selected"
+                    android:src="@drawable/ic_resta"
+                    app:tint="@color/white"
+                    android:layout_height="wrap_content"/>
+
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/btnSW"
+                    android:layout_width="wrap_content"
+                    app:backgroundTint="@color/backgroun_component_selected"
+                    android:src="@drawable/ic_sum"
+                    app:tint="@color/white"
+                    android:layout_height="wrap_content"/>
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/viewAge"
+        android:layout_width="0dp"
+        app:layout_constraintTop_toBottomOf="@id/viewHeight"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/viewWidth"
+        app:cardBackgroundColor="@color/backgroun_component"
+        app:cardCornerRadius="20dp"
+        android:layout_marginTop="32dp"
+        android:layout_height="150dp">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/age"
+                android:textColor="@color/white"/>
+
+            <TextView
+                android:id="@+id/twAge"
+                android:textColor="@color/white"
+                android:layout_width="wrap_content"
+                tools:text="10"
+                android:textSize="30sp"
+                android:layout_height="wrap_content"/>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/btnRA"
+                    android:layout_width="wrap_content"
+                    android:layout_marginEnd="16dp"
+                    app:backgroundTint="@color/backgroun_component_selected"
+                    android:src="@drawable/ic_resta"
+                    app:tint="@color/white"
+                    android:layout_height="wrap_content"/>
+
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/btnSA"
+                    android:layout_width="wrap_content"
+                    app:backgroundTint="@color/backgroun_component_selected"
+                    android:src="@drawable/ic_sum"
+                    app:tint="@color/white"
+                    android:layout_height="wrap_content"/>
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </androidx.cardview.widget.CardView>
+
+    <Button
+        android:id="@+id/btncalcular"
+        android:layout_width="0dp"
+        android:layout_height="80dp"
+        android:text="@string/calculate"
+        android:backgroundTint="@color/backgroun_component_selected"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+    </Button>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
